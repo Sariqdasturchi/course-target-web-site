@@ -203,6 +203,35 @@ nav .logo a img {
         cursor: pointer;
     }
 
+    .course-batafsil {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 95%;
+        height: 90px;
+        /* border: 1px solid red; */
+    }
+
+    .course-batafsil h3 {
+        text-align: center;
+        font-size: 19px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+        color: #212121;
+    }
+
+    .course-batafsil h3:nth-child(1) {
+        color: rgba(0, 128, 0, 0.89);
+    }
+
+    .course-batafsil h3:nth-child(2) {
+        color: rgb(228, 65, 65);
+    }
+
+    .course-batafsil h3:nth-child(3) {
+        color: rgb(0, 162, 255);
+    }
+
     .reason-cont, .solution-cont {
         width: 95%;
         height: auto;
@@ -211,13 +240,21 @@ nav .logo a img {
     }
 
     .reason-cont h1 {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 600;
         font-family: 'Montserrat', sans-serif;
         color: #030817;
     }
 
+    .reason-cont h1 span {
+        font-size: 21px;
+        font-weight: 500;
+        color: rgb(228, 65, 65);
+    }
+
     .reason-cont p {
+        margin-top: 10px;
+        padding-left: 5px;
         font-size: 16px;
         font-weight: 400;
         font-family: 'Montserrat', sans-serif;
@@ -225,13 +262,14 @@ nav .logo a img {
     }
 
     .solution-cont h1 {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 600;
         font-family: 'Montserrat', sans-serif;
         color: #030817;
     }
 
     .solution-cont p {
+        margin: 10px;
         font-size: 16px;
         font-weight: 400;
         font-family: 'Montserrat', sans-serif;
