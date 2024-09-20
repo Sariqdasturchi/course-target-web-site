@@ -25,6 +25,8 @@ nav .logo a img {
 }
 
 @media screen and (width < 420px) {
+
+
     section {
         width: 100%;
         height: auto;
@@ -133,11 +135,12 @@ nav .logo a img {
 
     .course-title {
         width: 90%;
-        height: 300px;
+        height: auto;
         margin-top: 25px;
         border: 1px solid silver;
         border-radius: 15px;
         color: white;
+        /* border: 1px solid red; */
     }
 
     .course-title h1 {
@@ -371,10 +374,10 @@ nav .logo a img {
 }
 
 @media screen and (420px < width < 720px) {
-    section {
-        width: 100%;
-        height: auto;
-        background-color: #030817;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     header,
@@ -382,336 +385,12 @@ nav .logo a img {
         width: 100%;
         height: 85px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         background-color: #030817;
     }
 
     nav .logo a {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
         text-decoration: none;
-        font-size: 15px;
-        font-weight: 500;
-        margin-left: 10px;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-    nav .logo a img {
-        display: block;
-        padding-left: 10px;
-        width: 50px;
-    }
-
-    nav .logo a span {
-        padding-left: 10px;
-    }
-
-    .header-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* border: 1px solid red; */
-    }
-
-    .header-text a {
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-    .menu-btn-cont a {
-        text-decoration: none;
-        padding: 10px;
-        border-radius: 4px;
-        margin-right: 15px;
-        background-color: transparent;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-    .menu-btn-cont a i {
-        font-size: 20px;
-        color: white;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        /* border: 1px solid red; */
-    }
-
-    .container .cont-txt {
-        padding: 10px;
-        width: 100%;
-        height: 45px;
-        /* border: 1px solid red; */
-        display: flex;
-        justify-content: space-between;
-        justify-content: center;
-        color: white;
-    }
-
-    .container h1 {
-        display: flex;
-        justify-content: center;
-        margin-left: -70px;
-        font-size: 24px;
-        font-weight: 700;
-        font-family: 'Montserrat',sans-serif;
-        color: white;
-    }
-
-    .container h1 i {
-        margin-right: 5px;
-    }
-
-    .course-title {
-        width: 90%;
-        height: 300px;
-        margin-top: 25px;
-        border: 1px solid silver;
-        border-radius: 15px;
-        color: white;
-    }
-
-    .course-title h1 {
-        font-size: 30px;
-        font-weight: 600;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-    .course-title p {
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-size: 18px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-
-
-    .course-form {
-        width: 95%;
-        height: auto;
-        margin-top: 35px;
-        /* border: 1px solid red; */
-    }
-
-    form {
-        width: 100%;
-        height: 300px;
-        /* border: 1px solid blue; */
-    }
-
-    form div {
-        position: relative;
-        width: 100%;
-        height: 90px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        /* border: 1px solid red; */
-    }
-
-    form div label {
-        position: absolute;
-        left: 30px;
-        top: -12px;
-        margin-bottom: 7px;
-        text-align: start;
-        font-size: 16px;
-        font-weight: 500;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-    form div input {
-        width: 90%;
-        padding: 12px;
-        border: 1px solid #030817;
-        border-radius: 7px;
-        outline: none;
-        font-size: 17px;
-        font-weight: 400;
-        font-family: "Montserrat", sans-serif;
-        color: #212121;
-    }
-
-    form div p {
-        margin-top: -20px;
-        text-align: center;
-        font-size: 13px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-    }
-
-    form div button {
-        width: 90%;
-        height: 45px;
-        /* margin-top: -50px; */
-        background-color: #030817;
-        border: 1px solid silver;
-        border-radius: 7px;
-        font-size: 17px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-        cursor: pointer;
-    }
-
-    .course-title ul {
-        width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-    }
-
-    .course-title ul li {
-        margin-left: 25px;
-        font-size: 14px;
-        margin-top: 5px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .course-title p {
-        margin-left: 20px;
-        margin-top: 10px;
-        font-size: 16px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .course-title h4 {
-        margin-bottom: 20px;
-        font-size: 12px;
-        font-weight: 600;
-        font-family: "Montserrat", sans-serif;
-        color: #030817;
-    }
-
-    .map {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 95%;
-        height: auto;
-    }
-
-    .map iframe {
-        border: none;
-        outline: none;
-        border-radius: 10px;
-    }
-
-    footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 25px;
-        width: 100%;
-        height: 350px;
-        background-color: #f5f5f5;
-    }
-
-    .footer-logo {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        width: 95%;
-        height: 80px;
-        /* border: 1px solid red; */
-    }
-
-    .footer-logo a {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-        color: #030817;
-    }
-
-    .footer-logo a img {
-        width: 30px;
-        margin-right: 8px;
-    }
-
-    .footer-message {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        width: 95%;
-        height: 70px;
-        /* border: 1px solid red; */
-    }
-
-    .footer-message a i {
-        margin: 10px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #030817;
-        cursor: pointer;
-    }
-
-    .footer-course-about {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        width: 100%;
-        height: 100px;
-        /* border: 1px solid red; */
-    }
-
-    .footer-course-about a {
-        text-decoration: none;
-        padding: 10px;
-        /* background-color: white; */
-        font-size: 15px;
-        font-family: 'Montserrat', sans-serif;
-        color: #030817;
-        border-radius: 7px;
-    }
-
-    .footer-phone {
-        width: 95%;
-        height: 70px;
-        /* border: 1px solid red; */
-    }
-
-    .footer-phone a {
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-        color: #030817;
-    }
-
-    .footer-phone p {
-        margin-top: 15px;
-        font-size: 14px;
-        font-weight: 400;
-        font-family: 'Montserrat', sans-serif;
-        color: #030817;
     }
 }
