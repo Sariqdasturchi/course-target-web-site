@@ -1,5 +1,7 @@
 const form = document.getElementById('sheetdb-form')
 const cont = document.querySelector('section')
+const success = document.querySelector('.success')
+const danger = document.querySelector('.danger')
 
 
 form.addEventListener('submit', (e) => {
@@ -9,16 +11,27 @@ form.addEventListener('submit', (e) => {
     const phone = form['phone'].value.trim();
 
     if (!fullName || !phone) {
-        alert("Ma'lumotlarni to'liq kiriting")
-    } else {
+        danger.style.display = 'block'
+        success.style.display = 'none'
+        setTimeout(() => {
+            danger.style.display = 'none'
+        }, 4000);
+    }
+    else {
         fetch(form.action, {
             method: "POST",
             body: new FormData(form),
         }).then(res => res.json())
             .then((req) => {
-                alert('Xabaringiz yuborildi')
+                success.style.display = 'block'
+                danger.style.display = 'none'
+                setTimeout(() => {
+                    success.style.display = 'none'
+                }, 6000);
                 form.reset(); // Formani tozalash
             })
+
     }
+    console.log();
 });
 
