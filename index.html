@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Pixel Code -->
+    <script async>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '791866962910291');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=791866962910291&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
     <!-- CSS -->
     <link rel="stylesheet" href="./style/style.css">
     <!-- AOS js CSS -->
@@ -19,7 +38,6 @@
 <body>
 
     <section>
-        
         <header>
             <nav>
                 <div class="logo">
@@ -31,6 +49,7 @@
 
                 </div>
                 <div class="menu-btn-cont">
+                    <a href="#sovga">Sovg'a</a>
                     <a href="#map">Manzil</a>
                     <a href="tel:998889345505">
                         <i class="fa-solid fa-phone"></i>
@@ -39,10 +58,8 @@
                 </div>
             </nav>
         </header>
-        <div class="container">
-
+        <div class="container" id="batafsil">
             <div class="cont-txt">
-
                 <h1> <i class="fa-solid fa-meteor" style="color: #ffffff;"></i>Interior dizayn kursi</h1>
             </div>
             <div class="course-title" data-aos="fade-right" id="batafsil">
@@ -59,6 +76,9 @@
                     <li>Darslar Samarqand shahrida offline <br> bo'lib o'tadi</li>
                 </ul>
             </div>
+            <div class="course-price">
+
+            </div>
             <div class="course-form" data-aos="fade-up" id="form">
                 <form action="https://sheetdb.io/api/v1/t6pc7s0cyjcfs" method="post" id="sheetdb-form">
                     <div>
@@ -70,7 +90,7 @@
                         <input type="tel" name="phone" value="+998" required id="phone">
                     </div>
                     <div>
-                        <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Kursga
+                        <button type="submit">Kursga
                             yozilish</button>
                     </div>
                     <div>
@@ -78,7 +98,28 @@
                     </div>
                 </form>
             </div>
-
+            <div class="course-sovga" id="sovga">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./imgs/4.png" class="d-block w-100" alt="Sovg'a pul">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./imgs/6.png" class="d-block w-100" alt="Sovg'a noutbook">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
             <div class="map" data-aos="fade-up" id="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072.236263561918!2d66.95950973884071!3d39.64439704740557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d19ca891429b5%3A0xd67bdbef8e48a3a2!2sSamarqand%20Yoshlar%20Texnoparki!5e0!3m2!1sru!2s!4v1726521835270!5m2!1sru!2s"
