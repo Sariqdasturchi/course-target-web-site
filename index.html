@@ -80,11 +80,11 @@
                 <form action="https://sheetdb.io/api/v1/xr3kiwaxrg9ig" method="post" id="sheetdb-form">
                     <div>
                         <label for="Ism">Ism va Familya</label>
-                        <input type="text" name="Ism"  id="lastName">
+                        <input type="text" name="Ism"  id="lastName" required autocomplete="off">
                     </div>
                     <div>
                         <label for="Telraqam">Telefon raqam</label>
-                        <input type="text" name="Telraqam" id="phone" oninput="phoneMask(event)" placeholder="+998 (__) ___-__-__">
+                        <input type="text" name="Telraqam" id="phone" oninput="phoneMask(event)" placeholder="+998 (__) ___-__-__" required autocomplete="off">
                     </div>
                     <div>
                         <button type="submit">Kursga
@@ -156,12 +156,13 @@
     </section>
     <!-- Mask JS -->
     <script>
+        // Telefon raqamini masklash funksiyasi
         function phoneMask(event) {
             const input = event.target;
-            let value = input.value.replace(/\D/g, ''); // Remove all non-digit characters
-            if (value.length > 12) value = value.substring(0, 12); // Restrict to max 12 digits (998999999999)
+            let value = input.value.replace(/\D/g, ''); // Barcha raqam bo'lmagan belgilarni olib tashlash
+            if (value.length > 12) value = value.substring(0, 12); // Maksimal 12 ta raqamni cheklash (998999999999)
 
-            // Apply the mask "+998 (99) 999-99-99"
+            // Telefon raqamiga "+998 (99) 999-99-99" formatini qo'llash
             let formattedValue = '+998 (';
             if (value.length > 3) formattedValue += value.substring(3, 5) + ') ';
             if (value.length > 5) formattedValue += value.substring(5, 8) + '-';
@@ -170,6 +171,84 @@
 
             input.value = formattedValue;
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('sheetdb-form');
+            const success = document.querySelector('.success');
+            const danger = document.querySelector('.danger');
+            const fullName = document.getElementById('lastName');
+            const phone = document.getElementById('phone');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Formani avtomatik jo'natilishini oldini olish
+
+                // Telefon raqamini tozalash
+                const sanitizedPhone = phone.value.replace(/\D/g, ''); // Faqat raqamlarni olish
+                const currentTime = new Date();
+                const timeFormatted = `${currentTime.getDate()}.${currentTime.getMonth() + 1} - ${currentTime.getHours()}:${currentTime.getMinutes()}`;
+
+                // console.log('Yuborilayotgan ma\'lumotlar:', { 
+                //     Ism: fullName.value, 
+                //     Telraqam: sanitizedPhone,
+                //     'Tel qilingan vaq': timeFormatted,
+                //     'Javob': '',
+                //     'Ertaga aloqaga chiqaman - 2': '',
+                //     'O\'ylab ko\'radi (qayta aloqaga chiqaman) - 3': '',
+                //     'Kursga yozildi to\'lov qiladi (to\'lov qiladigan vaqti aloqaga chiqaman) - 4': '',
+                //     'To\'lov qildi': ''
+                // }); // Yuborilayotgan ma'lumotlarni konsolda ko'rsatish
+
+                // Formani tekshirish
+                if (!fullName.value || !sanitizedPhone || sanitizedPhone.length !== 12) {
+                    danger.style.display = 'block';
+                    success.style.display = 'none';
+                    setTimeout(() => {
+                        danger.style.display = 'none';
+                    }, 4000);
+                } else {
+                    // JSON formatida ma'lumotlarni yuborish
+                    const data = {
+                        Ism: fullName.value,
+                        Telraqam: sanitizedPhone,
+                        'Tel qilingan vaq': timeFormatted,
+                        'Javob': '',
+                        'Ertaga aloqaga chiqaman - 2': '',
+                        'O\'ylab ko\'radi (qayta aloqaga chiqaman) - 3': '',
+                        'Kursga yozildi to\'lov qiladi (to\'lov qiladigan vaqti aloqaga chiqaman) - 4': '',
+                        'To\'lov qildi': ''
+                    };
+
+                    fetch(form.action, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json', // JSON formatini ko'rsatish
+                        },
+                        body: JSON.stringify(data), // Ma'lumotlarni JSON formatida yuborish
+                    })
+                    .then(res => {
+                        // console.log('Javob:', res); // Serverdan qaytgan javobni konsolda ko'rsatish
+                        return res.json();
+                    })
+                    .then((req) => {
+                        // console.log('Serverdan kelgan ma\'lumot:', req); // Serverdan kelgan ma'lumot
+                        success.style.display = 'block';
+                        danger.style.display = 'none';
+                        setTimeout(() => {
+                            success.style.display = 'none';
+                        }, 6000);
+                        form.reset(); // Formani tozalash
+                    })
+                    .catch(err => {
+                        // console.error('Xatolik:', err); // Xatolikni konsolda ko'rsatish
+                        danger.style.display = 'block';
+                        success.style.display = 'none';
+                        setTimeout(() => {
+                            danger.style.display = 'none';
+                        }, 4000);
+                    });
+                }
+            });
+        });
     </script>
     <!-- AOS js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -181,7 +260,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!-- JavaScript -->
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
 </body>
 
 </html>
